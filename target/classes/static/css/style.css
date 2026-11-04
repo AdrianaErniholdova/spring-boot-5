@@ -1,0 +1,406 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7fb;
+    color: #29283c;
+}
+
+.page-container {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 45px;
+}
+
+.header {
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eae9f1;
+    margin-bottom: 55px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #29283c;
+}
+
+.logo span {
+    color: #8170e8;
+}
+
+.header-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #9997ad;
+    font-weight: 600;
+}
+
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    gap: 20px;
+}
+
+.page-heading h1 {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #9291a4;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #eeedf4;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(40, 35, 80, 0.035);
+}
+
+.table-heading {
+    margin-bottom: 25px;
+}
+
+.table-heading h2 {
+    font-size: 19px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #faf9fd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 11px;
+    color: #9291a4;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    text-align: left;
+}
+
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #fcfbff;
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 13px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: #8170e8;
+    color: white;
+    padding: 14px 20px;
+}
+
+.btn-primary:hover {
+    background: #6b5bd0;
+}
+
+.btn-light {
+    background: #f2f0ff;
+    color: #7765d7;
+}
+
+.btn-light:hover {
+    background: #e7e2ff;
+}
+
+.btn-danger {
+    background: #fff0f1;
+    color: #d85b6d;
+}
+
+.btn-danger:hover {
+    background: #ffdddf;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.badge {
+    display: inline-block;
+    padding: 7px 11px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-purple {
+    background: #f0edff;
+    color: #7865d7;
+}
+
+.badge-green {
+    background: #e9f7ef;
+    color: #32966a;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 55px 15px;
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #9291a4;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    color: #aaa8b8;
+    font-size: 12px;
+    padding: 35px 0;
+}
+
+@media (max-width: 800px) {
+    .page-container {
+        padding: 0 18px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .header {
+        margin-bottom: 35px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .actions {
+        flex-wrap: wrap;
+    }
+}
+
+.form-card {
+    max-width: 950px;
+}
+
+.form-card h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.form-card > .subtitle {
+    margin-bottom: 30px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px 25px;
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 9px;
+    color: #39384d;
+}
+
+.form-control {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #e5e3ed;
+    border-radius: 9px;
+    font-size: 13px;
+    background: #fff;
+    color: #29283c;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-control:focus {
+    border-color: #8170e8;
+    box-shadow: 0 0 0 3px rgba(129, 112, 232, 0.10);
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex !important;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid #e5e3ed;
+    padding: 12px 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 500 !important;
+    transition: 0.2s;
+}
+
+.radio-option:has(input:checked) {
+    border-color: #8170e8;
+    background: #f5f2ff;
+    color: #7562d6;
+}
+
+.radio-option input {
+    accent-color: #8170e8;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #f0eff5;
+}
+
+.employee-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eeedf4;
+}
+
+.employee-profile h2 {
+    font-size: 23px;
+    margin-bottom: 6px;
+}
+
+.avatar {
+    width: 65px;
+    height: 65px;
+    background: #eeeaff;
+    color: #7967d8;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.detail-section {
+    padding: 28px 0;
+    border-bottom: 1px solid #eeedf4;
+}
+
+.detail-section h3 {
+    font-size: 16px;
+    margin-bottom: 23px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.detail-item span {
+    color: #9291a4;
+    font-size: 12px;
+}
+
+.detail-item strong {
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+@media (max-height: 800px) {
+    .header {
+        height: 55px;
+        min-height: 55px;
+        margin-bottom: 15px;
+    }
+
+    .page-heading {
+        margin-bottom: 13px;
+    }
+
+    .page-heading h1 {
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 17px 22px;
+    }
+
+    .form-group {
+        margin-bottom: 9px;
+    }
+
+    .form-control {
+        padding: 8px 10px;
+    }
+
+    .detail-section {
+        padding: 13px 0;
+    }
+
+    .employee-profile {
+        padding-bottom: 13px;
+    }
+
+    footer {
+        padding: 8px 0;
+    }
+}

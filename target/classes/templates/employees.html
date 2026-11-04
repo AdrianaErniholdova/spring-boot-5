@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Zoznam zamestnancov</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="page-container">
+
+  <main>
+
+    <div class="page-heading">
+
+      <div>
+        <h1>Zoznam zamestnancov</h1>
+      </div>
+
+      <a th:href="@{/employees/new}" class="btn btn-primary">
+        + Pridať zamestnanca
+      </a>
+
+    </div>
+
+    <div class="card">
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Meno</th>
+            <th>Priezvisko</th>
+            <th>Email</th>
+            <th>Pracovná pozícia</th>
+            <th>Úväzok</th>
+            <th>Akcie</th>
+          </tr>
+          </thead>
+
+          <tbody>
+
+          <tr th:each="employee : ${employees}">
+
+            <td th:text="${employee.id}"></td>
+
+            <td th:text="${employee.firstName}"></td>
+
+            <td th:text="${employee.lastName}"></td>
+
+            <td th:text="${employee.email}"></td>
+
+            <td>
+                            <span class="badge badge-purple"
+                                  th:text="${employee.jobTitle}">
+                            </span>
+            </td>
+
+            <td>
+                            <span class="badge badge-green"
+                                  th:text="${employee.fullTime}">
+                            </span>
+            </td>
+
+            <td class="actions">
+
+              <a th:href="@{/employees/{id}(id=${employee.id})}"
+                 class="btn btn-light">
+                Detail
+              </a>
+
+              <a th:href="@{/employees/edit/{id}(id=${employee.id})}"
+                 class="btn btn-light">
+                Upraviť
+              </a>
+
+              <form th:action="@{/employees/delete/{id}(id=${employee.id})}"
+                    method="post">
+
+                <button type="submit"
+                        class="btn btn-danger"
+                        onclick="return confirm('Naozaj chcete odstrániť tohto zamestnanca?')">
+                  Odstrániť
+                </button>
+
+              </form>
+
+            </td>
+
+          </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <div th:if="${#lists.isEmpty(employees)}"
+           class="empty-state">
+
+        <h3>Zatiaľ tu nikto nie je</h3>
+
+        <p>Pridajte svojho prvého zamestnanca.</p>
+
+        <a th:href="@{/employees/new}" class="btn btn-primary">
+          + Pridať zamestnanca
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>

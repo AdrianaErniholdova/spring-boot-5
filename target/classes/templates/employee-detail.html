@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Detail zamestnanca</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="page-container">
+
+  <main>
+
+    <div class="page-heading">
+
+      <div>
+        <h1>Detail zamestnanca</h1>
+      </div>
+
+      <a th:href="@{/employees}" class="btn btn-light">
+        ← Späť na zoznam
+      </a>
+
+    </div>
+
+    <div class="card">
+
+      <div class="detail-section">
+
+        <h3>Osobné informácie</h3>
+
+        <div class="detail-grid">
+
+          <div class="detail-item">
+            <span>ID zamestnanca</span>
+            <strong th:text="${employee.id}"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Meno</span>
+            <strong th:text="${employee.firstName}"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Priezvisko</span>
+            <strong th:text="${employee.lastName}"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Dátum narodenia</span>
+            <strong th:text="${employee.birthDate}"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Email</span>
+            <strong th:text="${employee.email}"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Telefón</span>
+            <strong th:text="${employee.phone}"></strong>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="detail-section">
+
+        <h3>Pracovné informácie</h3>
+
+        <div class="detail-grid">
+
+          <div class="detail-item">
+            <span>Pracovná pozícia</span>
+            <strong th:text="${employee.jobTitle}"></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Plat</span>
+            <strong>
+              <span th:text="${employee.salary != null ? employee.salary : 'Neuvedený'}"></span>
+              <span th:if="${employee.salary != null}"> €</span>
+            </strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Typ pracovného pomeru</span>
+            <strong th:text="${employee.fullTime}"></strong>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="form-buttons">
+
+        <a th:href="@{/employees/edit/{id}(id=${employee.id})}"
+           class="btn btn-primary">
+          Upraviť zamestnanca
+        </a>
+
+        <a th:href="@{/employees}" class="btn btn-light">
+          Späť na zoznam
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>
